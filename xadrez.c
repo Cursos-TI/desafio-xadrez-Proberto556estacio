@@ -56,7 +56,7 @@ int main() {
     } while (j < movRainha);
              
 
-    printf("\n");
+
 
 
 

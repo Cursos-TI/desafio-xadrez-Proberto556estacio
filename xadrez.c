@@ -17,6 +17,60 @@ int main() {
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
+    
+    //Movimento Bispo (Diagonal) - Utilizando Estrutura Repetição While.
+
+    //Declarando variáveis Bispo. 
+    int movBispo = 5;
+    int i = 0;
+
+    printf("Movimento do Bispo\n");
+    
+    while (i < movBispo)
+    {
+        printf("Cima Direita\n");
+        i++;
+    }    
+    printf("\n");
+    
+    
+    
+    //Movimento da Torre (Vertical/Horizontal) - Utilizando Estrutura Repetição For.
+
+    //Declarando variáveis torre.
+    int movTorre = 5;
+
+    printf("Movimento da Torre\n");
+
+    for (int i = 0; i < movTorre; i++)
+    {
+        printf("Direita\n");
+    }
+    printf("\n");
+
+    
+    //Movimento da Rainha (Qualquer movimento) - Utilizando Estrutura Repetição Do While.
+
+    //Declarando variáveis Rainha.
+    int movRainha = 8;
+    int j = 0;
+
+    printf("Movimento da Rainha\n");
+
+    do
+    {
+        printf("Esquerda\n");
+        j++;
+    } while (j < movRainha);
+             
+
+    printf("\n");
+
+
+
+
+
+    
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.

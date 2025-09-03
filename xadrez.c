@@ -54,8 +54,30 @@ int main() {
         printf("Esquerda\n");
         j++;
     } while (j < movRainha);
-             
 
+    printf("\n");
+
+
+    //Movimento do Cavalo - Movimento em "L" - Utilizando Duas Estruturas de Repetição (While e For).
+             
+    //Declarando 
+    int moviCavalo = 2 ;
+    int l;
+
+    printf("Movimento do Cavalo\n");
+
+    while (l < moviCavalo)
+    {
+        for (int k = 0; k < moviCavalo; k++)
+        {
+            printf("Baixo\n");
+        }
+        l++;
+        printf("Esquerda\n");
+
+    }
+    
+    printf("\n");
 
 
 

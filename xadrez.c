@@ -58,6 +58,7 @@ int main() {
     printf("\n");
 
 
+    
     //Movimento do Cavalo - Movimento em "L" - Utilizando Duas Estruturas de Repetição (While e For).
              
     //Declarando 
@@ -66,7 +67,7 @@ int main() {
 
     printf("Movimento do Cavalo\n");
 
-    while (l < moviCavalo)
+        while (l < moviCavalo)
     {
         for (int k = 0; k < moviCavalo; k++)
         {
@@ -78,16 +79,10 @@ int main() {
     }
     
     printf("\n");
-
-
-
-
-
+    
 
     
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.

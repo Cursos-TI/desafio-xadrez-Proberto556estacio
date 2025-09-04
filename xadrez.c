@@ -4,32 +4,73 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-
    
-    // Movimento da torre - Função recursiva
+    // Movimento da Torre - Função recursiva
 
     void moverTorre(int casa) {
         if (casa > 0)
         {
-            printf("Direita\n");
-            moverTorre(casa -1);
-        }
-        
-
+            printf("Direita\n");    //Imprime posição torre
+            moverTorre(casa -1);    //Chama a si mesmo com casa -1
+        }      
     }
     
 
+    // Movimento da Rainha - Função recursiva
+    void moverRainha(int casa){
+        if (casa > 0)
+        {
+           printf("Esquerda\n");    //Imprime posição torre
+           moverRainha(casa -1);    //Chama a si mesmo com casa -1              
+        }      
+    }
+        
+    // Movimento do Bispo - Função recursiva + loops 
+    void moverBispo(int movimentosRestantes, int i) {
+    if (movimentosRestantes <= 0);
+
+    // Loop aninhado simples
+    for (int j = 0; j <= i; j++) {
+        if (i == j) {
+            printf("Cima Direita\n");
+            movimentosRestantes--;
+            break; // imprime uma vez por chamada recursiva
+        }
+    }
+
+    // Próxima chamada recursiva
+    moverBispo(movimentosRestantes, i + 1);
+}
+
+
+ 
+
+       
     int main() {
 
-    // Declarando variáveis quantidade movimento
+    // Declaração movimentos desejados por peça 
+          
     int movTorre = 5;
+    int movRainha = 8;
+    int movBispo = 5; 
     
-    
-    //Parâmetro da função - Torre
+    // Movimento da Torre
     printf("Movimento da Torre\n");
-    movTorre(moverTorre);
+    moverTorre(movTorre);
+    printf("\n");
     
+    // Movimento da Rainha
+    printf("Movimento da Rainha\n");
+    moverRainha(movRainha);
+    printf("\n");
+
+    // Movimento do Bispo 
+    printf("Movimento do Bispo\n");
+    moverBispo(movBispo, 0);
+    printf("\n");
     
+        
+
     /*
     
     //Movimento Bispo (Diagonal) - Utilizando Estrutura Repetição While.

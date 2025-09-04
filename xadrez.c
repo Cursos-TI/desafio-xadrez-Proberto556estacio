@@ -80,10 +80,6 @@ int main() {
     printf("\n");
 
 
-
-
-
-
     
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.

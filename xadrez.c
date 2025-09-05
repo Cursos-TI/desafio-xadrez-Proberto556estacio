@@ -39,11 +39,33 @@ void moverBispoCombinado(int movimentosRestantes, int i) {
     moverBispoCombinado(movimentosRestantes, i + 1);
 }
 
-// Movimento único do Cavalo em "L"
+// Movimento único do Cavalo em "L" (2 para cima, 1 para a direita) usando loops aninhados
 void moverCavalo() {
-    printf("Cima\n");
-    printf("Cima\n");
-    printf("Direita\n");
+    int movimentosRealizados = 0;
+
+    for (int cima = 0; cima <= 2; cima++) {
+        for (int direita = 0; direita <= 1; direita++) {
+
+            // Verifica a condição exata do movimento em "L"
+            if (cima == 2 && direita == 1) {
+                printf("Cima\n");
+                printf("Cima\n");
+                printf("Direita\n");
+                movimentosRealizados = 1;
+                break; // Sai do loop interno
+            }
+
+            // Se não for o movimento certo, continua o loop
+            if (cima + direita < 3) {
+                continue;
+            }
+        }
+
+        // Se o movimento já foi feito, sai do loop externo
+        if (movimentosRealizados) {
+            break;
+        }
+    }
 }
 
 int main() {
@@ -66,12 +88,10 @@ int main() {
     moverRainha(movRainha);
     printf("\n");
 
-    // Movimento do Cavalo (único)
-    printf("Movimento do Cavalo (Movimento em L único)\n");
+    // Movimento do Cavalo (único, com loops aninhados)
+    printf("Movimento do Cavalo (Movimento em L único com loops aninhados)\n");
     moverCavalo();
     printf("\n");
 
-
     return 0;
 }
-

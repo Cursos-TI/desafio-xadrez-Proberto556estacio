@@ -8,22 +8,22 @@
 
 #include <stdio.h>
 
-// Movimento da Torre (para a direita) - recursivo
+// Movimento da Torre (para a direita) - Recursividade
 void moverTorre(int casas) {
     if (casas <= 0) return;
     printf("Direita\n");
     moverTorre(casas - 1);
 }
 
-// Movimento da Rainha (para a esquerda) - recursivo
+// Movimento da Rainha (para a esquerda) - Recursividade
 void moverRainha(int casas) {
     if (casas <= 0) return;
     printf("Esquerda\n");
     moverRainha(casas - 1);
 }
 
-// Movimento do Bispo (recursividade + loops) com exatamente 5 movimentos
-void moverBispoCombinado(int movimentosRestantes, int i) {
+// Movimento do Bispo (recursividade + loops) 
+void moverBispo(int movimentosRestantes, int i) {
     if (movimentosRestantes <= 0) return;
 
     // Loop aninhado simples
@@ -36,7 +36,7 @@ void moverBispoCombinado(int movimentosRestantes, int i) {
     }
 
     // Próxima chamada recursiva
-    moverBispoCombinado(movimentosRestantes, i + 1);
+    moverBispo(movimentosRestantes, i + 1);
 }
 
 // Movimento único do Cavalo em "L" (2 para cima, 1 para a direita) usando loops aninhados
@@ -69,13 +69,15 @@ void moverCavalo() {
 }
 
 int main() {
-    int movBispo = 5;     // Número total de movimentos desejado
+
+    // Número total de movimentos desejados
+    int movBispo = 5;     
     int movTorre = 5;
     int movRainha = 8;
 
     // Movimento do Bispo - combinado (com 5 movimentos)
-    printf("Movimento do Bispo (Recursividade + Loops Aninhados)\n");
-    moverBispoCombinado(movBispo, 0);
+    printf("Movimento do Bispo)\n");
+    moverBispo(movBispo, 0);
     printf("\n");
 
     // Movimento da Torre
@@ -89,7 +91,7 @@ int main() {
     printf("\n");
 
     // Movimento do Cavalo (único, com loops aninhados)
-    printf("Movimento do Cavalo (Movimento em L único com loops aninhados)\n");
+    printf("Movimento do Cavalo (Movimento em L)\n");
     moverCavalo();
     printf("\n");
 

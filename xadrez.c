@@ -10,36 +10,38 @@
 
 // Movimento da Torre (para a direita) - Recursividade
 void moverTorre(int casas) {
-    if (casas <= 0) return;
-    printf("Direita\n");
-    moverTorre(casas - 1);
+    if (casas > 0) {
+        printf("Direita\n");
+        moverTorre(casas - 1);
+    }
 }
 
-// Movimento da Rainha (para a esquerda) - Recursividade
+// Movimento da Rainha (para a esquerda) - Recursividade 
 void moverRainha(int casas) {
-    if (casas <= 0) return;
-    printf("Esquerda\n");
-    moverRainha(casas - 1);
+    if (casas > 0) {
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
 }
 
 // Movimento do Bispo (recursividade + loops) 
 void moverBispo(int movimentosRestantes, int i) {
-    if (movimentosRestantes <= 0) return;
+    if (movimentosRestantes > 0) {
 
-    // Loop aninhado simples
-    for (int j = 0; j <= i; j++) {
-        if (i == j) {
-            printf("Cima Direita\n");
-            movimentosRestantes--;
-            break; // imprime uma vez por chamada recursiva
+        // Loop aninhado simples
+        for (int j = 0; j <= i; j++) {
+            if (i == j) {
+                printf("Cima Direita\n");
+                movimentosRestantes--; // decrementa dentro da lógica
+                break; // ainda usa break para controle do loop
+            }
         }
-    }
 
-    // Próxima chamada recursiva
-    moverBispo(movimentosRestantes, i + 1);
+        moverBispo(movimentosRestantes, i + 1);
+    }
 }
 
-// Movimento único do Cavalo em "L" (2 para cima, 1 para a direita) usando loops aninhados
+// Movimento do Cavalo em "L" (2 cima, 1 direita) usando loops com continue/break
 void moverCavalo() {
     int movimentosRealizados = 0;
 
@@ -52,31 +54,28 @@ void moverCavalo() {
                 printf("Cima\n");
                 printf("Direita\n");
                 movimentosRealizados = 1;
-                break; // Sai do loop interno
+                break; // sai do loop interno
             }
 
-            // Se não for o movimento certo, continua o loop
             if (cima + direita < 3) {
                 continue;
             }
         }
 
-        // Se o movimento já foi feito, sai do loop externo
         if (movimentosRealizados) {
-            break;
+            break; // sai do loop externo
         }
     }
 }
 
 int main() {
-
     // Número total de movimentos desejados
     int movBispo = 5;     
     int movTorre = 5;
     int movRainha = 8;
 
-    // Movimento do Bispo - combinado (com 5 movimentos)
-    printf("Movimento do Bispo)\n");
+    // Movimento do Bispo
+    printf("Movimento do Bispo\n");
     moverBispo(movBispo, 0);
     printf("\n");
 
@@ -90,7 +89,7 @@ int main() {
     moverRainha(movRainha);
     printf("\n");
 
-    // Movimento do Cavalo (único, com loops aninhados)
+    // Movimento do Cavalo
     printf("Movimento do Cavalo (Movimento em L)\n");
     moverCavalo();
     printf("\n");
